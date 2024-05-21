@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resume Maker</title>
+        <style type="text/css" media="all">
+            body {
+                font-family: Arial;
+            }
+            h1 {
+                text-align: center;
+                color: white;
+                text-shadow: 0 0 10px black;
+            }
+            #info {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                margin: 0 auto; /* Center the form on the page */
+            }
+            label {
+                font-size: 1.2em;
+                margin: 5px;
+                font-style: italic;
+            }
+            input {
+                padding: 5px;
+                border: 1px dashed black;
+                border-radius: 3px;
+            }
+            input:focus {
+                box-shadow: 0 0 20px black;
+                padding: 8px;
+                background-color: black;
+                color: white;
+            }
+            button {
+                padding: 10px;
+                margin-top: 10px;
+                border: none;
+                background-color: black;
+                color: white;
+                cursor: pointer;
+                border-radius: 3px;
+            }
+            button:hover {
+                background-color: darkgray;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Personal Information</h1>
+        <div id="info">
+            <form action="info.html" method="get">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" required/>
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" required/>
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" required/>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required/>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>

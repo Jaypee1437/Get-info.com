@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Information</title>
+        <style type="text/css" media="all">
+            body {
+                font-family: Arial;
+            }
+            h1 {
+                text-align: center;
+                color: white;
+                text-shadow: 0 0 10px black;
+            }
+            #display-info {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                margin: 0 auto; /* Center the form on the page */
+                background-color: #f4f4f4;
+                padding: 20px;
+                border-radius: 5px;
+            }
+            p {
+                font-size: 1.2em;
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Submitted Information</h1>
+        <div id="display-info">
+            <p><strong>First Name:</strong> <span id="first-name"></span></p>
+            <p><strong>Last Name:</strong> <span id="last-name"></span></p>
+            <p><strong>Age:</strong> <span id="user-age"></span></p>
+            <p><strong>Email:</strong> <span id="user-email"></span></p>
+        </div>
+
+        <script type="text/javascript">
+            // Function to get URL parameters
+            function getQueryParams() {
+                const params = {};
+                const queryString = window.location.search.slice(1);
+                const pairs = queryString.split('&');
+                pairs.forEach(pair => {
+                    const [key, value] = pair.split('=');
+                    params[decodeURIComponent(key)] = decodeURIComponent(value.replace(/\+/g, ' '));
+                });
+                return params;
+            }
+
+            // Display the parameters in the HTML
+            document.addEventListener("DOMContentLoaded", () => {
+                const params = getQueryParams();
+                document.getElementById('first-name').textContent = params['fname'];
+                document.getElementById('last-name').textContent = params['lname'];
+                document.getElementById('user-age').textContent = params['age'];
+                document.getElementById('user-email').textContent = params['email'];
+            });
+        </script>
+    </body>
+</html>
